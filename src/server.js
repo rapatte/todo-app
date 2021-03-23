@@ -2,26 +2,24 @@ const path = require('path')
 const express = require('express')
 const layout = require('express-layout')
 
-const routes = require('./routers/index')
+const routes = require('./routes')
 const app = express()
 
 const bodyParser = require('body-parser')
 
-app.set("views", path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 const middlewares = [
   layout(),
   express.static(path.join(__dirname, 'public')),
+  express.static(path.join(__dirname, 'files')),
   express.urlencoded({extended: false})
 ]
-
 app.use(middlewares)
+
 app.use('/', routes)
 
-app.listen(8080, () => {
-  console.log('App listening on port 8080')
+app.listen(3535, () => {
+  console.log(`App running at http://localhost:8080`)
 })
-
-// app.engine('ejs', ejs.renderFile);
-// const ejs = require('ejs');

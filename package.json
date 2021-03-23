@@ -2,7 +2,7 @@
   "name": "todo-app",
   "version": "1.0.0",
   "description": "une to-do list basique",
-  "main": "./src/index.js",
+  "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js",
     "watch": "nodemon ./src/server.js"
