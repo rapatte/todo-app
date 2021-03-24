@@ -2,7 +2,7 @@ const express = require('express')
 const mysql = require('mysql')
 const router = express.Router()
 
-const pass = "#Antoine1993"
+const pass = ""
 
 function getConnection() {
   return mysql.createConnection({
