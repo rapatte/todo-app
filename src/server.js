@@ -12,6 +12,7 @@ app.set('view engine', 'ejs')
 
 const middlewares = [
   layout(),
+  express.static(path.join(__dirname, 'public')),
   express.static(path.join(__dirname, 'files')),
   express.urlencoded({extended: false})
 ]
