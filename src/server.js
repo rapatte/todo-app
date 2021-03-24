@@ -12,7 +12,6 @@ app.set('view engine', 'ejs')
 
 const middlewares = [
   layout(),
-  express.static(path.join(__dirname, 'public')),
   express.static(path.join(__dirname, 'files')),
   express.urlencoded({extended: false})
 ]
@@ -20,6 +19,6 @@ app.use(middlewares)
 
 app.use('/', routes)
 
-app.listen(3535, () => {
+app.listen(8080, () => {
   console.log(`App running at http://localhost:8080`)
 })

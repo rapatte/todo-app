@@ -2,7 +2,7 @@ const express = require('express')
 const mysql = require('mysql')
 const router = express.Router()
 
-const pass = "your_password_here"
+const pass = "#Antoine1993"
 
 function getConnection() {
   return mysql.createConnection({
@@ -47,7 +47,7 @@ router.post('/complete_todo/:id', (req, res) => {
 router.post('/add_todo', (req, res) => {
   const todo = req.body.add_todo_input
 
-  const queryString = "INSERT INTO todos (todo) VALUES (?)"
+  const queryString = "INSERT INTO todos (todo) VALUES ()"
   con.query(queryString, [todo], (err, rows, fields) => {
     if (err) {
       console.log("Failed to insert at /add_todo/: " + todo + " " +
